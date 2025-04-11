@@ -6,11 +6,11 @@ from pathlib import Path
 from setuptools import find_packages, setup
 
 # Package meta-data.
-NAME = 'bikeshare_model'
-DESCRIPTION = "Bikeshare dataset regression model package "
+NAME = 'employee_attrition_model'
+DESCRIPTION = "employee attrition dataset classification model package "
 EMAIL = "------"
 AUTHOR = "----------"
-REQUIRES_PYTHON = ">=3.7.0"
+REQUIRES_PYTHON = ">=3.12.0"
 
 
 # The rest no need to touch too much :)
@@ -25,7 +25,7 @@ about = {}
 ROOT_DIR = Path(__file__).resolve().parent
 print(ROOT_DIR)
 REQUIREMENTS_DIR = ROOT_DIR / 'requirements'
-PACKAGE_DIR = ROOT_DIR / 'bikeshare_model'
+PACKAGE_DIR = ROOT_DIR / 'employee_attrition_model'
 with open(PACKAGE_DIR / "VERSION") as f:
     _version = f.read().strip()
     about["__version__"] = _version

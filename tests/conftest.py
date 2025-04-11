@@ -7,8 +7,8 @@ sys.path.append(str(root))
 import pytest
 from sklearn.model_selection import train_test_split
 
-from employee_attrition_prediction_model.config.core import config
-from employee_attrition_prediction_model.processing.data_manager import load_dataset
+from employee_attrition_model.config.core import config
+from employee_attrition_model.processing.data_manager import load_dataset
 
 
 @pytest.fixture

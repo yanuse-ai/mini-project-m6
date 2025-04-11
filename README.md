@@ -1,5 +1,6 @@
 # mini-project-m6
 Mini Project 2: Continuous Integration for Model Training
+employee_attrition_model
 
 Objective: Implement a CI/CD pipeline to continuously train and deploy an ML model.
 1. Create a Git repository for the project and include the ML model code, training

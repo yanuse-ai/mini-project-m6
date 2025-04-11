@@ -11,8 +11,8 @@ import numpy as np
 import pandas as pd
 from fastapi import APIRouter, HTTPException, Body
 from fastapi.encoders import jsonable_encoder
-from employee_attrition_prediction_model import __version__ as model_version
-from employee_attrition_prediction_model.predict import make_prediction
+from employee_attrition_model import __version__ as model_version
+from employee_attrition_model.predict import make_prediction
 
 from app import __version__, schemas
 from app.config import settings

@@ -8,11 +8,11 @@ from typing import Union
 import pandas as pd
 import numpy as np
 
-from employee_attrition_prediction_model import __version__ as _version
-from employee_attrition_prediction_model.config.core import config
-from employee_attrition_prediction_model.processing.data_manager import load_pipeline
-from employee_attrition_prediction_model.processing.data_manager import pre_pipeline_preparation
-from employee_attrition_prediction_model.processing.validation import validate_inputs
+from employee_attrition_model import __version__ as _version
+from employee_attrition_model.config.core import config
+from employee_attrition_model.processing.data_manager import load_pipeline
+from employee_attrition_model.processing.data_manager import pre_pipeline_preparation
+from employee_attrition_model.processing.validation import validate_inputs
 
 
 pipeline_file_name = f"{config.app_config_.pipeline_save_file}{_version}.pkl"

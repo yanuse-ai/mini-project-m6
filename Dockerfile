@@ -2,10 +2,10 @@
 FROM python:3.10-slim
 
 # copy application files
-ADD /resume_classification_api /resume_classification_api/
+ADD /employee_attrition_api /employee_attrition_api/
 
 # specify working directory
-WORKDIR /resume_classification_api
+WORKDIR /employee_attrition_api
 
 # update pip
 RUN pip install --upgrade pip

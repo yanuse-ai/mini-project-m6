@@ -1,13 +1,13 @@
 include *.txt
 include *.md
 include *.pkl
-recursive-include ./resume_classification_model *
+recursive-include ./employee_attrition_model *
 
-include resume_classification_model/datasets/bike-rental-dataset.csv
-include resume_classification_model/datasets/test.csv
-include resume_classification_model/trained_models/*.pkl
-include resume_classification_model/VERSION
-include resume_classification_model/config.yml
+include employee_attrition_model/datasets/bike-rental-dataset.csv
+include employee_attrition_model/datasets/test.csv
+include employee_attrition_model/trained_models/*.pkl
+include employee_attrition_model/VERSION
+include employee_attrition_model/config.yml
 
 include ./requirements/requirements.txt
 include ./requirements/test_requirements.txt

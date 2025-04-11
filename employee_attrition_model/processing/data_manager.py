@@ -13,8 +13,8 @@ import pandas as pd
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OrdinalEncoder
 
-from employee_attrition_prediction_model import __version__ as _version
-from employee_attrition_prediction_model.config.core import DATASET_DIR, TRAINED_MODEL_DIR, config
+from employee_attrition_model import __version__ as _version
+from employee_attrition_model.config.core import DATASET_DIR, TRAINED_MODEL_DIR, config
 
 
 ##  Pre-Pipeline Preparation

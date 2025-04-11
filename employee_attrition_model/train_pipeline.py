@@ -8,11 +8,11 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 
-from employee_attrition_prediction_model.config.core import config
-from employee_attrition_prediction_model.pipeline import employee_attrition_prediction_pipe
-from employee_attrition_prediction_model.processing.data_manager import load_dataset, save_pipeline
+from employee_attrition_model.config.core import config
+from employee_attrition_model.pipeline import employee_attrition_prediction_pipe
+from employee_attrition_model.processing.data_manager import load_dataset, save_pipeline
 
-from employee_attrition_prediction_model.processing.features import FeatureOrdinalEncoder
+from employee_attrition_model.processing.features import FeatureOrdinalEncoder
 
 def run_training() -> None:
     

@@ -9,8 +9,8 @@ from catboost import CatBoostClassifier
 import warnings
 warnings.filterwarnings("ignore")
 
-from employee_attrition_prediction_model.config.core import config
-from employee_attrition_prediction_model.processing.features import FeatureOrdinalEncoder, PrintAllFeatures, RemoveTarget
+from employee_attrition_model.config.core import config
+from employee_attrition_model.processing.features import FeatureOrdinalEncoder, PrintAllFeatures, RemoveTarget
 
 employee_attrition_prediction_pipe = Pipeline([
 

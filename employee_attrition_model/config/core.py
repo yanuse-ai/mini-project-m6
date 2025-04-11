@@ -11,10 +11,10 @@ from typing import Dict, List
 from pydantic import BaseModel
 from strictyaml import YAML, load
 
-import employee_attrition_prediction_model
+import employee_attrition_model
 
 # Project Directories
-PACKAGE_ROOT = Path(employee_attrition_prediction_model.__file__).resolve().parent
+PACKAGE_ROOT = Path(employee_attrition_model.__file__).resolve().parent
 ROOT = PACKAGE_ROOT.parent
 CONFIG_FILE_PATH = PACKAGE_ROOT / "config.yml"
 #print(CONFIG_FILE_PATH)

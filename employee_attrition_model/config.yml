@@ -8,8 +8,8 @@ training_data_file: wa_fn_usec_hr_employee_attrition_tsv.csv
 # The variable we are attempting to predict (cnt)
 target: attrition
 
-pipeline_name: employee_attrition_prediction_model
-pipeline_save_file: employee_attrition_prediction_model_output_v
+pipeline_name: employee_attrition_model
+pipeline_save_file: employee_attrition_model_output_v
 
 # Features that will go inside processing pipeline
 features:
