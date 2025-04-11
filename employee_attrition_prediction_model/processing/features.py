@@ -15,7 +15,7 @@ class FeatureOrdinalEncoder(BaseEstimator, TransformerMixin):
             raise ValueError("variable name should be a str")
 
         self.variable = variable
-        self.encoder = OrdinalEncoder(sparse_output=False)
+        self.encoder = OrdinalEncoder()
 
     def fit(self, X: pd.DataFrame, y: pd.Series = None):
         # we need the fit statement to accomodate the sklearn pipeline
@@ -34,6 +34,7 @@ class FeatureOrdinalEncoder(BaseEstimator, TransformerMixin):
         X[self.encoded_features_names] = encoded_features
 
         ## drop 'weekday' column after encoding
-        ##X.drop(self.variable, axis=1, inplace=True)        
+        ##X.drop(self.variable, axis=1, inplace=True)
+        print(X.shape)       
 
         return X

@@ -63,3 +63,4 @@ venv
 # generated model
 trained_models
 *.pkl
+catboost_info

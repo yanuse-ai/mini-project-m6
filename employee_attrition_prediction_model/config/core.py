@@ -32,7 +32,7 @@ class AppConfig(BaseModel):
     training_data_file: str
     pipeline_name: str
     pipeline_save_file: str
-
+    
 
 class ModelConfig(BaseModel):
     """
@@ -46,7 +46,20 @@ class ModelConfig(BaseModel):
     test_size:float
     random_state: int
 
-
+    # cat feature var
+    businesstravel_var: str
+    department_var: str
+    educationfield_var: str
+    gender_var: str
+    jobrole_var: str
+    maritalstatus_var: str
+    overtime_var: str
+    over18_var: str
+  
+    # Alogrithm parameters
+    iterations: int
+    learning_rate: float
+    loss_function: str
 
 class Config(BaseModel):
     """Master config object."""

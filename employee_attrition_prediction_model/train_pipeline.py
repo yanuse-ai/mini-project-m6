@@ -30,14 +30,14 @@ def run_training() -> None:
         test_size = config.model_config_.test_size,
         random_state=config.model_config_.random_state,   # set the random seed here for reproducibility
     )
+    print(f"Data: X_train: {X_train.shape}, X_test: {X_test.shape}, y_train: {y_train.shape}, y_test: {y_test.shape}")
 
     # Pipeline fitting
     employee_attrition_prediction_pipe.fit(X_train, y_train)
-    y_pred = employee_attrition_prediction_pipe.predict(X_test)
+    #y_pred = employee_attrition_prediction_pipe.predict(X_test)
 
     # Calculate the score/error
-    print("R2 score:", round(r2_score(y_test, y_pred), 2))
-    print("Mean squared error:", mean_squared_error(y_test, y_pred))
+    print("accuracy:", round(employee_attrition_prediction_pipe.score(X_test, y_test), 2))
 
     # persist trained model
     save_pipeline(pipeline_to_persist = employee_attrition_prediction_pipe)

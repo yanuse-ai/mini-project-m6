@@ -1,3 +1,4 @@
+import os
 import sys
 from pathlib import Path
 file = Path(__file__).resolve()
@@ -10,6 +11,7 @@ from pathlib import Path
 import joblib
 import pandas as pd
 from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OrdinalEncoder
 
 from employee_attrition_prediction_model import __version__ as _version
 from employee_attrition_prediction_model.config.core import DATASET_DIR, TRAINED_MODEL_DIR, config
@@ -30,24 +32,38 @@ def handle_outliers(dataframe: pd.DataFrame):
         lower_bound = q1 - 1.5 * IQR
         upper_bound = q3 + 1.5 * IQR
 
-        print(f"{q1}=>{lower_bound}, {q3}=>{upper_bound}, {IQR}")
+        #print(f"{q1}=>{lower_bound}, {q3}=>{upper_bound}, {IQR}")
         f1 = df_data_filtered[col] >= lower_bound
         f2 = df_data_filtered[col] <= upper_bound
         df_data_filtered = df_data_filtered[f1 & f2]
     
     return df_data_filtered
 
+def ordinal_encoder(dataframe: pd.DataFrame):
+    df_data_part_b = dataframe.copy()
+    
+    cat_col = []
+    for col in list(df_data_part_b.select_dtypes(include=['object']).columns):
+        cat_col.append(col)
+    
+    ordinal_enc = OrdinalEncoder()
+    df_data_part_b[cat_col + ['attrition']] = ordinal_enc.fit_transform(df_data_part_b[cat_col + ['attrition']])
+
+    return df_data_part_b
+
 def pre_pipeline_preparation(*, data_frame: pd.DataFrame) -> pd.DataFrame:
 
-    # handle the outliers 
+    # handle the outliers
     data_frame = handle_outliers(data_frame)
 
     return data_frame
 
 def load_dataset(*, file_name: str) -> pd.DataFrame:
     dataframe = pd.read_csv(Path(f"{DATASET_DIR}/{file_name}"))
+    print(f"Original data: {dataframe.shape}")
     transformed = pre_pipeline_preparation(data_frame = dataframe)
-
+    transformed = ordinal_encoder(transformed)
+    print(f"After transform data: {transformed.shape}")
     return transformed
 
 
@@ -82,6 +98,9 @@ def remove_old_pipelines(*, files_to_keep: t.List[str]) -> None:
     the model version to be imported and used by other applications.
     """
     do_not_delete = files_to_keep + ["__init__.py"]
+    if not os.path.exists(TRAINED_MODEL_DIR):
+        os.mkdir(TRAINED_MODEL_DIR)
+
     for model_file in TRAINED_MODEL_DIR.iterdir():
         if model_file.name not in do_not_delete:
             model_file.unlink()
