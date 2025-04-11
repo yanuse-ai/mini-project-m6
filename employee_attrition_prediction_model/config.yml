@@ -1,0 +1,74 @@
+# Package Overview
+package_name: employee_attrition_prediction
+
+# Data Files
+training_data_file: wa_fn_usec_hr_employee_attrition_tsv.csv
+
+# Variables
+# The variable we are attempting to predict (cnt)
+target: attrition
+
+pipeline_name: employee_attrition_prediction_model
+pipeline_save_file: employee_attrition_prediction_model_output_v
+
+# Features that will go inside processing pipeline
+features:
+- age
+- attrition
+- dailyrate
+- distancefromhome
+- education
+- employeecount
+- employeenumber
+- environmentsatisfaction
+- hourlyrate
+- jobinvolvement
+- joblevel
+- jobsatisfaction
+- monthlyincome
+- monthlyrate
+- numcompaniesworked
+- percentsalaryhike
+- performancerating
+- relationshipsatisfaction
+- standardhours
+- stockoptionlevel
+- totalworkingyears
+- trainingtimeslastyear
+- worklifebalance
+- yearsatcompany
+- yearsincurrentrole
+- yearssincelastpromotion
+- yearswithcurrmanager
+# cat features
+- businesstravel
+- department
+- educationfield
+- gender
+- jobrole
+- maritalstatus
+- overtime
+- over18
+
+# Features names
+# num features var
+# cat feature var
+businesstravel_var: businesstravel
+department_var: department
+educationfield_var: educationfield
+gender_var: gender
+jobrole_var: jobrole
+maritalstatus_var: maritalstatus
+overtime_var: overtime
+over18_var: over18
+  
+# Set train/test split
+test_size: 0.20
+
+# Set the random seed
+random_state: 42
+
+# Alogrithm parameters
+iterations: 5
+learning_rate: 0.1
+loss_function: CrossEntropy
