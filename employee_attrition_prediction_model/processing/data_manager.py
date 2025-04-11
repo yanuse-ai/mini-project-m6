@@ -62,7 +62,7 @@ def load_dataset(*, file_name: str) -> pd.DataFrame:
     dataframe = pd.read_csv(Path(f"{DATASET_DIR}/{file_name}"))
     print(f"Original data: {dataframe.shape}")
     transformed = pre_pipeline_preparation(data_frame = dataframe)
-    transformed = ordinal_encoder(transformed)
+    #transformed = ordinal_encoder(transformed)
     print(f"After transform data: {transformed.shape}")
     return transformed
 

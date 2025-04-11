@@ -63,7 +63,7 @@ overtime_var: overtime
 over18_var: over18
   
 # Set train/test split
-test_size: 0.20
+test_size: 0.30
 
 # Set the random seed
 random_state: 42

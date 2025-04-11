@@ -12,6 +12,8 @@ from employee_attrition_prediction_model.config.core import config
 from employee_attrition_prediction_model.pipeline import employee_attrition_prediction_pipe
 from employee_attrition_prediction_model.processing.data_manager import load_dataset, save_pipeline
 
+from employee_attrition_prediction_model.processing.features import FeatureOrdinalEncoder
+
 def run_training() -> None:
     
     """
@@ -21,6 +23,9 @@ def run_training() -> None:
     # read training data
     data = load_dataset(file_name = config.app_config_.training_data_file)
     print(data.shape)
+
+    encoder = FeatureOrdinalEncoder(variable = config.model_config_.target)
+    data = encoder.fit_transform(data)
     
     # divide train and test
     X_train, X_test, y_train, y_test = train_test_split(
