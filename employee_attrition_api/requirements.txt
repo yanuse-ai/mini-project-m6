@@ -5,7 +5,7 @@ pydantic
 pydantic-settings
 
 # If locally copied whl file inside employee_attrition_api then use given below
-employee_attrition_model-0.0.1-py3-none-any.whl
+#employee_attrition_model-0.0.1-py3-none-any.whl
 
 # If uploded your package in PyPI then use the given below
 #employee_attrition_model==0.0.1
